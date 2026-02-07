@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DREVA — Coming Soon</title>
+  <title>DREVA — In Development</title>
 
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --navy: #0F1F33;
-      --blue: #0A55FF;
-      --text-light: #6B7280;
-      --border: #E6EAF0;
-      --bg-soft: #F9FAFB;
+      --navy: #18273d;
+      --blue: #0057ff;
+      --muted: #6b7280;
+      --border: #e6eaf0;
+      --bg-soft: #f9fafb;
     }
 
     * {
@@ -33,7 +32,7 @@
       justify-content: center;
     }
 
-    .wrapper {
+    .container {
       max-width: 1200px;
       width: 100%;
       padding: 32px 20px;
@@ -43,39 +42,40 @@
       border: 1px solid var(--border);
       border-radius: 24px;
       padding: 64px 48px;
-      text-align: center;
       background: #fff;
     }
 
-    .logo img {
-      height: 64px;
-      margin-bottom: 32px;
+    /* Logo */
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: rgba(10, 85, 255, 0.08);
+      background: rgba(0, 87, 255, 0.08);
       color: var(--blue);
-      padding: 10px 20px;
+      padding: 10px 18px;
       border-radius: 999px;
       font-size: 14px;
       font-weight: 500;
       margin-bottom: 32px;
     }
 
-    .pulse {
+    .dot {
       width: 8px;
       height: 8px;
       background: var(--blue);
       border-radius: 50%;
-      animation: pulse 1.5s infinite;
+      animation: pulse 1.4s infinite;
     }
 
     @keyframes pulse {
       0% { transform: scale(1); opacity: 1; }
-      100% { transform: scale(2.4); opacity: 0; }
+      100% { transform: scale(2.2); opacity: 0; }
     }
 
     h1 {
@@ -83,6 +83,7 @@
       font-weight: 600;
       letter-spacing: -0.6px;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     h1 span {
@@ -90,49 +91,50 @@
     }
 
     .subtitle {
+      max-width: 680px;
+      margin: 0 auto 56px;
       font-size: 17px;
-      color: var(--text-light);
-      max-width: 640px;
-      margin: 0 auto 48px;
       line-height: 1.7;
+      color: var(--muted);
+      text-align: center;
     }
 
-    .features {
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 24px;
-      margin-top: 40px;
     }
 
-    .feature {
+    .item {
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 28px;
-      text-align: left;
       transition: all 0.3s ease;
+      background: #fff;
     }
 
-    .feature:hover {
-      border-color: var(--blue);
+    .item:hover {
       transform: translateY(-4px);
+      border-color: var(--blue);
     }
 
-    .feature h3 {
+    .item h3 {
       font-size: 16px;
-      margin-bottom: 8px;
-      color: var(--navy);
+      margin-bottom: 10px;
+      font-weight: 600;
     }
 
-    .feature p {
+    .item p {
       font-size: 14px;
-      color: var(--text-light);
+      color: var(--muted);
       line-height: 1.6;
     }
 
     footer {
-      margin-top: 48px;
+      margin-top: 56px;
+      text-align: center;
       font-size: 13px;
-      color: var(--text-light);
+      color: var(--muted);
     }
 
     @media (max-width: 768px) {
@@ -148,51 +150,77 @@
 </head>
 <body>
 
-  <div class="wrapper">
+  <div class="container">
     <div class="card">
 
-      <!-- Logo -->
+      <!-- LOGO (INLINE SVG) -->
       <div class="logo">
-        <img src="logo.png" alt="DREVA Logo">
+        <!-- Your exact SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="188" height="60" viewBox="0 0 187.98 60.35">
+          <defs>
+            <style>
+              .cls-1{fill:#0057ff;}
+              .cls-2{fill:#18273d;}
+            </style>
+          </defs>
+          <path class="cls-2" d="M0,51.91V11.86h15.79c12.55,0,21.26,7.99,21.26,20.06s-8.71,20-21.26,20H0ZM8.53,44.4h7.27c7.93,0,12.55-5.7,12.55-12.49s-4.32-12.55-12.55-12.55h-7.27v25.04Z"/>
+          <path class="cls-2" d="M63.35,51.91l-7.87-14.35h-6.24v14.35h-8.53V11.86h18.73c8.35,0,13.45,5.46,13.45,12.91s-4.44,10.87-8.77,11.89l9.01,15.25h-9.79Z"/>
+          <path class="cls-2" d="M129.19,51.91l-15.49-40.05h9.73l11.11,30.8 11.05-30.8h9.73l-15.43,40.05h-10.69Z"/>
+          <path class="cls-2" d="M178.67,51.91l-2.52-6.91h-17.89l-2.52,6.91h-9.37l15.49-40.05h10.69l15.43,40.05h-9.31Z"/>
+          <path class="cls-1" d="M114.64,36.84c-3.01,12.67-17.3,29.35-31.72,21.49-6.77-3.68-8.96-11.66-5.9-18.57 1.18-2.65 2.86-4.82 4.88-6.64-1.9-1.36-3.36-3.33-4.04-5.59-2.32-7.77 3.52-16.49 9.4-20.98 5.55-4.24 19.22-10.97 24.07-2.41 4.66,8.23-8,15.8-13.78,18.71Z"/>
+        </svg>
       </div>
 
-      <!-- Status -->
-      <div class="badge">
-        <span class="pulse"></span>
-        App in Development
+      <!-- STATUS -->
+      <div style="text-align:center;">
+        <div class="badge">
+          <span class="dot"></span>
+          In Development
+        </div>
       </div>
 
-      <!-- Headline -->
+      <!-- MAIN HEADING -->
       <h1>
-        Experience, <span>Redefined</span>
+        Building brands that <span>think</span>, <span>move</span>, and <span>scale</span>
       </h1>
 
-      <!-- Description -->
+      <!-- SUBTEXT -->
       <p class="subtitle">
-        DREVA is currently in development. We’re crafting a focused, experience-driven
-        platform where design, technology, and clarity come together — without noise.
+        DREVA is currently in development.  
+        We’re shaping a focused ecosystem where <strong>marketing strategy</strong>,
+        <strong>technology</strong>, and <strong>design</strong> work together —
+        not in silos, not as services, but as a system.
       </p>
 
-      <!-- Feature Blocks -->
-      <div class="features">
-        <div class="feature">
-          <h3>Built on Experience</h3>
-          <p>The “E” in DREVA isn’t decoration — it stands for thoughtful experiences that actually work.</p>
+      <!-- GRID -->
+      <div class="grid">
+        <div class="item">
+          <h3>Marketing, with intent</h3>
+          <p>
+            Not noise. Not trends.  
+            We build strategies that attract, convert, and compound — backed by data and clarity.
+          </p>
         </div>
 
-        <div class="feature">
-          <h3>Minimal by Design</h3>
-          <p>Clean interfaces, sharp systems, and zero distractions. Every element has a purpose.</p>
+        <div class="item">
+          <h3>Technology that enables growth</h3>
+          <p>
+            From systems to products, tech isn’t an add-on here.
+            It’s the foundation that makes everything scalable.
+          </p>
         </div>
 
-        <div class="feature">
-          <h3>Launching Soon</h3>
-          <p>We’re refining the final layers before opening access. Stay close — something solid is coming.</p>
+        <div class="item">
+          <h3>Design that actually works</h3>
+          <p>
+            Visuals are only the surface.
+            Experience, usability, and structure come first — aesthetics follow naturally.
+          </p>
         </div>
       </div>
 
       <footer>
-        © 2026 DREVA®. Crafted with intention.
+        © 2026 DREVA®. Crafted intentionally.
       </footer>
 
     </div>
