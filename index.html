@@ -2,229 +2,168 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Kaur Ji 💖 Valentine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DREVA — In Development</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --navy: #18273d;
-      --blue: #0057ff;
-      --muted: #6b7280;
-      --border: #e6eaf0;
-      --bg-soft: #f9fafb;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
     body {
-      background: #ffffff;
-      color: var(--navy);
-      min-height: 100vh;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(135deg, #ffb6c1, #ffe4ec);
+      overflow: hidden;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
-    .container {
-      max-width: 1200px;
-      width: 100%;
-      padding: 32px 20px;
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: pink;
+      font-size: 18px;
+      animation: fall linear forwards;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
     }
 
     .card {
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 64px 48px;
-      background: #fff;
+      background: white;
+      padding: 34px;
+      border-radius: 28px;
+      text-align: center;
+      box-shadow: 0 25px 50px rgba(255,105,180,0.35);
+      max-width: 340px;
+      width: 90%;
+      z-index: 10;
+      animation: float 3s ease-in-out infinite;
     }
 
-    /* Logo */
-    .logo {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(0, 87, 255, 0.08);
-      color: var(--blue);
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 500;
-      margin-bottom: 32px;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      background: var(--blue);
-      border-radius: 50%;
-      animation: pulse 1.4s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      100% { transform: scale(2.2); opacity: 0; }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
     }
 
     h1 {
-      font-size: 46px;
-      font-weight: 600;
-      letter-spacing: -0.6px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    h1 span {
-      color: var(--blue);
-    }
-
-    .subtitle {
-      max-width: 680px;
-      margin: 0 auto 56px;
-      font-size: 17px;
-      line-height: 1.7;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-
-    .item {
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
-      transition: all 0.3s ease;
-      background: #fff;
-    }
-
-    .item:hover {
-      transform: translateY(-4px);
-      border-color: var(--blue);
-    }
-
-    .item h3 {
-      font-size: 16px;
+      color: #ff4d88;
       margin-bottom: 10px;
-      font-weight: 600;
     }
 
-    .item p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.6;
+    p {
+      color: #ff6f9c;
+      font-size: 16px;
     }
 
-    footer {
-      margin-top: 56px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
+    img {
+      width: 190px;
+      margin-top: 12px;
     }
 
-    @media (max-width: 768px) {
-      .card {
-        padding: 40px 24px;
-      }
+    .buttons {
+      margin-top: 22px;
+      position: relative;
+      height: 60px;
+    }
 
-      h1 {
-        font-size: 34px;
-      }
+    button {
+      padding: 12px 26px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    #yes {
+      background: linear-gradient(135deg, #ff69b4, #ff1493);
+      color: white;
+      left: 18%;
+      box-shadow: 0 8px 20px rgba(255,105,180,0.4);
+    }
+
+    #no {
+      background: #eee;
+      color: #777;
+      right: 18%;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="card">
+<audio id="music" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+</audio>
 
-      <!-- LOGO (INLINE SVG) -->
-      <div class="logo">
-        <!-- Your exact SVG -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="188" height="60" viewBox="0 0 187.98 60.35">
-          <defs>
-            <style>
-              .cls-1{fill:#0057ff;}
-              .cls-2{fill:#18273d;}
-            </style>
-          </defs>
-          <path class="cls-2" d="M0,51.91V11.86h15.79c12.55,0,21.26,7.99,21.26,20.06s-8.71,20-21.26,20H0ZM8.53,44.4h7.27c7.93,0,12.55-5.7,12.55-12.49s-4.32-12.55-12.55-12.55h-7.27v25.04Z"/>
-          <path class="cls-2" d="M63.35,51.91l-7.87-14.35h-6.24v14.35h-8.53V11.86h18.73c8.35,0,13.45,5.46,13.45,12.91s-4.44,10.87-8.77,11.89l9.01,15.25h-9.79Z"/>
-          <path class="cls-2" d="M129.19,51.91l-15.49-40.05h9.73l11.11,30.8 11.05-30.8h9.73l-15.43,40.05h-10.69Z"/>
-          <path class="cls-2" d="M178.67,51.91l-2.52-6.91h-17.89l-2.52,6.91h-9.37l15.49-40.05h10.69l15.43,40.05h-9.31Z"/>
-          <path class="cls-1" d="M114.64,36.84c-3.01,12.67-17.3,29.35-31.72,21.49-6.77-3.68-8.96-11.66-5.9-18.57 1.18-2.65 2.86-4.82 4.88-6.64-1.9-1.36-3.36-3.33-4.04-5.59-2.32-7.77 3.52-16.49 9.4-20.98 5.55-4.24 19.22-10.97 24.07-2.41 4.66,8.23-8,15.8-13.78,18.71Z"/>
-        </svg>
-      </div>
+<div class="card">
+  <h1>Kaur Ji 💖</h1>
+  <p>Will you be my Valentine?</p>
 
-      <!-- STATUS -->
-      <div style="text-align:center;">
-        <div class="badge">
-          <span class="dot"></span>
-          In Development
-        </div>
-      </div>
+  <img id="panda" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" />
 
-      <!-- MAIN HEADING -->
-      <h1>
-        Building brands that <span>think</span>, <span>move</span>, and <span>scale</span>
-      </h1>
-
-      <!-- SUBTEXT -->
-      <p class="subtitle">
-        DREVA is currently in development.  
-        We’re shaping a focused ecosystem where <strong>marketing strategy</strong>,
-        <strong>technology</strong>, and <strong>design</strong> work together —
-        not in silos, not as services, but as a system.
-      </p>
-
-      <!-- GRID -->
-      <div class="grid">
-        <div class="item">
-          <h3>Marketing, with intent</h3>
-          <p>
-            Not noise. Not trends.  
-            We build strategies that attract, convert, and compound — backed by data and clarity.
-          </p>
-        </div>
-
-        <div class="item">
-          <h3>Technology that enables growth</h3>
-          <p>
-            From systems to products, tech isn’t an add-on here.
-            It’s the foundation that makes everything scalable.
-          </p>
-        </div>
-
-        <div class="item">
-          <h3>Design that actually works</h3>
-          <p>
-            Visuals are only the surface.
-            Experience, usability, and structure come first — aesthetics follow naturally.
-          </p>
-        </div>
-      </div>
-
-      <footer>
-        © 2026 DREVA®. Crafted intentionally.
-      </footer>
-
-    </div>
+  <div class="buttons">
+    <button id="yes">Yes 🥰</button>
+    <button id="no">No 🙈</button>
   </div>
+</div>
+
+<script>
+  const noBtn = document.getElementById('no');
+  const yesBtn = document.getElementById('yes');
+  const panda = document.getElementById('panda');
+  const music = document.getElementById('music');
+
+  document.body.addEventListener('click', () => {
+    music.play();
+  }, { once: true });
+
+  noBtn.addEventListener('mouseover', () => {
+    const x = Math.random() * 220 - 110;
+    const y = Math.random() * 100 - 50;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    panda.src = "https://media.giphy.com/media/l41lYCDgxP6OFBruE/giphy.gif";
+  });
+
+  yesBtn.addEventListener('click', () => {
+    document.querySelector('.card').innerHTML = `
+      <h1>She said YES 💍💖</h1>
+      <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" />
+      <p style="font-size:18px;color:#ff4d88;margin-top:10px;">
+        Kaur Ji, will you walk this beautiful life with me,
+        laugh with me, grow with me, and be mine forever? 💕
+      </p>
+      <p style="font-size:15px;color:#ff85ad;">
+        This is my heart, always yours ❤️
+      </p>
+      <p style="font-size:14px;color:#ff69b4;">
+        — Jaskeerat 💖
+      </p>
+    `;
+  });
+
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 10 + 14 + "px";
+    heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 6000);
+  }
+
+  setInterval(createHeart, 300);
+</script>
 
 </body>
 </html>
