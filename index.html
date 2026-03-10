@@ -1,169 +1,688 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Kaur Ji 💖 Valentine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing & Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #F5F2ED;
+  --bg2:      #EDEAE4;
+  --bg3:      #E6E2DB;
+  --surface:  #FFFFFF;
+  --border:   #D8D4CC;
+  --ink:      #0F0E0B;
+  --ink2:     #2A2821;
+  --muted:    #7A7670;
+  --muted2:   #A09C96;
+  --tag-bg:   rgba(15,14,11,0.06);
+  --tag-bd:   rgba(15,14,11,0.14);
+  --f-serif:  'Playfair Display', Georgia, serif;
+  --f-sans:   'Inter', sans-serif;
+  --f-mono:   'Space Mono', monospace;
+  --nav-h: 66px;
+  --max: 1160px;
+  --pad: clamp(1.2rem, 5vw, 3.5rem);
+  --r: 3px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-sans);font-size:0.9375rem;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Comic Sans MS', cursive;
-      background: linear-gradient(135deg, #ffb6c1, #ffe4ec);
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);background:rgba(245,242,237,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:var(--f-serif);font-size:1.2rem;font-weight:700;letter-spacing:0.06em;color:var(--ink);}
+.nav-logo em{font-style:italic;opacity:0.45;}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+.nav-links a{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--bg);background:var(--ink);padding:0.52rem 1.15rem;border-radius:var(--r);transition:all 0.2s;}
+.nav-cta:hover{background:var(--ink2);transform:translateY(-1px);}
+@media(max-width:700px){.nav-links{display:none;}}
 
-    .heart {
-      position: fixed;
-      top: -10px;
-      color: pink;
-      font-size: 18px;
-      animation: fall linear forwards;
-      pointer-events: none;
-      opacity: 0.8;
-    }
+/* HERO */
+.hero{min-height:100vh;padding-top:var(--nav-h);display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background:var(--bg);}
+.hero-bg-word{position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:var(--f-serif);font-size:clamp(7rem,20vw,20rem);font-weight:900;font-style:italic;color:rgba(15,14,11,0.04);line-height:1;pointer-events:none;user-select:none;white-space:nowrap;}
+.hero-inner{position:relative;z-index:1;max-width:var(--max);margin:0 auto;width:100%;padding:0 var(--pad) 5rem;}
+.eyebrow{font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;display:flex;align-items:center;gap:0.8rem;}
+.eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:var(--muted);}
+.hero h1{font-family:var(--f-serif);font-size:clamp(3.2rem,8vw,7rem);font-weight:900;line-height:0.95;letter-spacing:-0.02em;color:var(--ink);margin-bottom:2.5rem;max-width:820px;}
+.hero h1 em{font-style:italic;color:var(--muted);}
+.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem;}
+.hero-desc{font-size:1rem;color:var(--muted);max-width:400px;line-height:1.7;font-weight:300;}
+.hero-jumps{display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:flex-end;}
+.hero-jumps a{font-family:var(--f-mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:0.42rem 0.9rem;border-radius:var(--r);transition:all 0.2s;}
+.hero-jumps a:hover{color:var(--ink);border-color:var(--ink);background:rgba(15,14,11,0.04);}
+.hero-stats{display:flex;gap:0;margin-top:4rem;border-top:1px solid var(--border);}
+.hstat{flex:1;padding:1.5rem 0;border-right:1px solid var(--border);}
+.hstat:last-child{border-right:none;}
+.hstat-val{font-family:var(--f-serif);font-size:2rem;font-weight:900;color:var(--ink);line-height:1;margin-bottom:0.2rem;}
+.hstat-lbl{font-family:var(--f-mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);}
 
-    @keyframes fall {
-      to {
-        transform: translateY(110vh);
-        opacity: 0;
-      }
-    }
+/* SECTION */
+.section{padding:6rem var(--pad);max-width:var(--max);margin:0 auto;}
+.section-alt{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.section-alt .section{padding:6rem var(--pad);}
+.divider{height:1px;background:var(--border);max-width:var(--max);margin:0 auto;}
 
-    .card {
-      background: white;
-      padding: 34px;
-      border-radius: 28px;
-      text-align: center;
-      box-shadow: 0 25px 50px rgba(255,105,180,0.35);
-      max-width: 340px;
-      width: 90%;
-      z-index: 10;
-      animation: float 3s ease-in-out infinite;
-    }
+/* Section header */
+.sh{margin-bottom:3.5rem;}
+.slabel{font-family:var(--f-mono);font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.7rem;}
+.slabel::before{content:'';display:block;width:20px;height:1px;background:var(--muted);}
+.stitle{font-family:var(--f-serif);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;line-height:1.08;letter-spacing:-0.02em;color:var(--ink);}
+.stitle em{font-style:italic;color:var(--muted);}
+.sintro{font-size:0.88rem;color:var(--muted);max-width:520px;line-height:1.75;margin-top:1.2rem;}
 
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-      100% { transform: translateY(0); }
-    }
+/* CARDS */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
+.card{background:var(--surface);padding:2.2rem 2rem;position:relative;transition:background 0.25s;display:flex;flex-direction:column;}
+.card:hover{background:var(--bg);}
+.card.feat{background:var(--ink);color:var(--bg);}
+.card.feat:hover{background:var(--ink2);}
+.card.feat .ctier,.card.feat .cbest,.card.feat .punit,.card.feat .dtitle,.card.feat .dlist li,.card.feat .achip{color:rgba(245,242,237,0.45);}
+.card.feat .cname,.card.feat .pval{color:var(--bg);}
+.card.feat .dlist li::before{color:rgba(245,242,237,0.25);}
+.card.feat .dtitle{border-color:rgba(245,242,237,0.1);}
+.card.feat .pop{background:var(--bg);color:var(--ink);}
+.pop{position:absolute;top:1.4rem;right:1.4rem;font-family:var(--f-mono);font-size:0.54rem;letter-spacing:0.14em;text-transform:uppercase;background:var(--ink);color:var(--bg);padding:0.22rem 0.65rem;border-radius:999px;}
+.ctier{font-family:var(--f-mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted2);margin-bottom:0.5rem;}
+.cname{font-family:var(--f-serif);font-size:1.45rem;font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:0.3rem;}
+.cbest{font-size:0.76rem;color:var(--muted);margin-bottom:1.6rem;font-style:italic;}
+.pval{font-family:var(--f-serif);font-size:2.2rem;font-weight:900;color:var(--ink);line-height:1;}
+.punit{font-size:0.7rem;color:var(--muted);margin-top:0.15rem;margin-bottom:1.5rem;}
+.dtitle{font-family:var(--f-mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);padding-bottom:0.6rem;border-bottom:1px solid var(--border);margin-bottom:0.9rem;}
+.dlist{list-style:none;display:flex;flex-direction:column;gap:0.45rem;flex:1;}
+.dlist li{font-size:0.79rem;color:var(--muted);display:flex;align-items:flex-start;gap:0.5rem;line-height:1.45;}
+.dlist li::before{content:'→';color:var(--muted2);flex-shrink:0;font-size:0.68rem;margin-top:2px;}
+.achip{display:inline-block;margin-top:1.4rem;font-family:var(--f-mono);font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:0.28rem 0.7rem;border-radius:999px;}
 
-    h1 {
-      color: #ff4d88;
-      margin-bottom: 10px;
-    }
+/* ADDON ROWS */
+.ab{margin-top:3rem;}
+.ab-title{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--border);}
+.arows{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
+.arow{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.4rem;background:var(--surface);border-bottom:1px solid var(--border);gap:1rem;transition:background 0.2s;}
+.arow:last-child{border-bottom:none;}
+.arow:hover{background:var(--bg2);}
+.arow-name{font-size:0.84rem;font-weight:500;color:var(--ink);}
+.arow-desc{font-size:0.71rem;color:var(--muted);margin-top:0.12rem;line-height:1.4;}
+.arow-price{font-family:var(--f-mono);font-size:0.84rem;color:var(--ink);white-space:nowrap;flex-shrink:0;}
 
-    p {
-      color: #ff6f9c;
-      font-size: 16px;
-    }
+/* ADDON GRID */
+.agrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-top:1rem;}
+.agitem{background:var(--surface);padding:1.1rem 1.3rem;display:flex;justify-content:space-between;align-items:center;gap:0.8rem;transition:background 0.2s;}
+.agitem:hover{background:var(--bg2);}
+.agname{font-size:0.81rem;color:var(--ink);font-weight:500;}
+.agsub{font-size:0.68rem;color:var(--muted);margin-top:0.1rem;}
+.agprice{font-family:var(--f-mono);font-size:0.8rem;color:var(--ink);white-space:nowrap;}
 
-    img {
-      width: 190px;
-      margin-top: 12px;
-    }
+/* PLANS */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
+.plan{background:var(--surface);padding:2rem 1.8rem;display:flex;flex-direction:column;position:relative;transition:background 0.25s;}
+.plan:hover{background:var(--bg);}
+.plan.pfeat{background:var(--ink);}
+.plan.pfeat:hover{background:var(--ink2);}
+.plan.pfeat .ptier,.plan.pfeat .ptagline,.plan.pfeat .pper,.plan.pfeat .pfeat-feat li,.plan.pfeat .pdiv{color:rgba(245,242,237,0.4);}
+.plan.pfeat .pname,.plan.pfeat .pprice{color:var(--bg);}
+.plan.pfeat .pdiv{background:rgba(245,242,237,0.1);}
+.plan.pfeat .pfeat-feat li{color:rgba(245,242,237,0.65);}
+.plan.pfeat .pfeat-feat li .fi{color:rgba(245,242,237,0.25);}
+.plan.pfeat .pfeat-feat li.hi{color:var(--bg);}
+.plan.pfeat .pop{background:var(--bg);color:var(--ink);}
+.ptier{font-family:var(--f-mono);font-size:0.57rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted2);margin-bottom:0.5rem;}
+.pname{font-family:var(--f-serif);font-size:1.25rem;font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:0.3rem;}
+.ptagline{font-size:0.74rem;color:var(--muted);font-style:italic;margin-bottom:1.2rem;}
+.pprice{font-family:var(--f-serif);font-size:2rem;font-weight:900;color:var(--ink);line-height:1;}
+.pper{font-size:0.7rem;color:var(--muted);margin-top:0.15rem;margin-bottom:1.4rem;}
+.pdiv{height:1px;background:var(--border);margin-bottom:1.2rem;}
+.pfeat-feat{list-style:none;display:flex;flex-direction:column;gap:0.5rem;flex:1;}
+.pfeat-feat li{font-size:0.77rem;color:var(--muted);display:flex;align-items:flex-start;gap:0.45rem;line-height:1.4;}
+.pfeat-feat li .fi{color:var(--muted2);font-size:0.62rem;flex-shrink:0;margin-top:3px;}
+.pfeat-feat li.hi{color:var(--ink);font-weight:500;}
 
-    .buttons {
-      margin-top: 22px;
-      position: relative;
-      height: 60px;
-    }
+/* TABS */
+.tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:2.5rem;overflow-x:auto;}
+.tbtn{font-family:var(--f-mono);font-size:0.63rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding:0.85rem 1.3rem;cursor:pointer;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;background:none;white-space:nowrap;transition:all 0.2s;}
+.tbtn.on{color:var(--ink);border-bottom-color:var(--ink);}
+.tpane{display:none;}
+.tpane.on{display:block;}
 
-    button {
-      padding: 12px 26px;
-      border: none;
-      border-radius: 30px;
-      font-size: 16px;
-      cursor: pointer;
-      position: absolute;
-    }
+/* TABLE */
+.dtable{width:100%;border-collapse:collapse;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
+.dtable th{background:var(--bg2);padding:0.85rem 1.3rem;text-align:left;font-family:var(--f-mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap;}
+.dtable td{padding:1rem 1.3rem;border-bottom:1px solid rgba(0,0,0,0.045);font-size:0.81rem;color:var(--muted);vertical-align:top;}
+.dtable tr:last-child td{border-bottom:none;}
+.dtable tr:hover td{background:rgba(0,0,0,0.015);}
+.dtable td:first-child{font-weight:500;color:var(--ink);width:24%;}
+.dtable td.p{font-family:var(--f-mono);color:var(--ink);font-size:0.86rem;white-space:nowrap;}
 
-    #yes {
-      background: linear-gradient(135deg, #ff69b4, #ff1493);
-      color: white;
-      left: 18%;
-      box-shadow: 0 8px 20px rgba(255,105,180,0.4);
-    }
+/* AI */
+.ai-banner{border:1px solid var(--border);border-radius:var(--r);padding:2rem 2.2rem;background:var(--surface);margin-bottom:2.5rem;display:flex;align-items:flex-start;gap:2rem;flex-wrap:wrap;}
+.ai-banner p{font-size:0.88rem;color:var(--muted);line-height:1.75;max-width:600px;}
+.ai-banner strong{color:var(--ink);font-weight:600;}
+.ai-bnum{font-family:var(--f-serif);font-size:5rem;font-weight:900;color:rgba(15,14,11,0.05);line-height:1;flex-shrink:0;}
+.aigrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
+.aicard{background:var(--surface);padding:2.2rem 2rem;transition:background 0.25s;}
+.aicard:hover{background:var(--bg);}
+.aicard.aifull{grid-column:1/-1;background:var(--bg2);}
+.aiicon{font-size:1.6rem;margin-bottom:0.9rem;opacity:0.7;}
+.aicat{font-family:var(--f-mono);font-size:0.57rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted2);margin-bottom:0.4rem;}
+.ainame{font-family:var(--f-serif);font-size:1.45rem;font-weight:700;color:var(--ink);margin-bottom:0.25rem;line-height:1.15;}
+.aitag{font-size:0.77rem;color:var(--muted);font-style:italic;margin-bottom:1.5rem;}
+.aipacks{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:1.5rem;}
+.aipack{padding:0.9rem 1.2rem;background:var(--bg);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;transition:background 0.2s;}
+.aipack:last-child{border-bottom:none;}
+.aipack:hover{background:var(--bg3);}
+.aipname{font-size:0.82rem;font-weight:500;color:var(--ink);}
+.aipdetail{font-size:0.7rem;color:var(--muted);margin-top:0.1rem;line-height:1.4;}
+.aipprice{font-family:var(--f-mono);font-size:0.86rem;color:var(--ink);white-space:nowrap;text-align:right;flex-shrink:0;}
+.aipsub{font-size:0.62rem;color:var(--muted2);}
 
-    #no {
-      background: #eee;
-      color: #777;
-      right: 18%;
-    }
-  </style>
+/* STRATEGIC */
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
+.sitem{background:var(--surface);padding:1.8rem 1.6rem;transition:background 0.25s;display:flex;flex-direction:column;justify-content:space-between;}
+.sitem:hover{background:var(--bg);}
+.sname{font-size:0.9rem;font-weight:500;color:var(--ink);margin-bottom:0.4rem;}
+.sdesc{font-size:0.75rem;color:var(--muted);line-height:1.55;margin-bottom:1.2rem;flex:1;}
+.sprice{font-family:var(--f-mono);font-size:1rem;color:var(--ink);}
+
+/* CTA */
+.cta{background:var(--ink);padding:5rem var(--pad);text-align:center;}
+.cta .slabel{justify-content:center;color:rgba(245,242,237,0.35);}
+.cta .slabel::before{background:rgba(245,242,237,0.25);}
+.cta .stitle{color:var(--bg);max-width:580px;margin:0.5rem auto 0.8rem;}
+.cta .stitle em{color:rgba(245,242,237,0.4);}
+.cta p{font-size:0.88rem;color:rgba(245,242,237,0.45);max-width:400px;margin:0 auto 2.5rem;}
+.cbtn{display:inline-block;font-family:var(--f-mono);font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);background:var(--bg);padding:0.85rem 2rem;border-radius:var(--r);transition:all 0.2s;}
+.cbtn:hover{background:var(--bg2);transform:translateY(-2px);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+@media(max-width:640px){
+  .hero h1{font-size:clamp(2.4rem,12vw,4rem);}
+  .hero-stats{flex-wrap:wrap;}
+  .hstat{min-width:50%;}
+  .cgrid,.pgrid,.aigrid,.sgrid{grid-template-columns:1fr;}
+  .hero-bottom{flex-direction:column;align-items:flex-start;}
+  .dtable{display:block;overflow-x:auto;}
+}
+</style>
 </head>
 <body>
 
-<audio id="music" loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
-</audio>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">Pricing &amp; <em>Services</em></div>
+  <ul class="nav-links">
+    <li><a href="#branding">Branding</a></li>
+    <li><a href="#social">Social</a></li>
+    <li><a href="#website">Website</a></li>
+    <li><a href="#packaging">Packaging</a></li>
+    <li><a href="#ai">AI</a></li>
+  </ul>
+  <a href="#cta" class="nav-cta">Start a Project</a>
+</nav>
 
-<div class="card">
-  <h1>Kaur Ji 💖</h1>
-  <p>Will you be my Valentine?</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-word">Pricing</div>
+  <div class="hero-inner">
+    <p class="eyebrow">Creative Studio — Design · Marketing · Tech</p>
+    <h1>Services Built<br>to <em>Elevate</em><br>Your Brand</h1>
+    <div class="hero-bottom">
+      <p class="hero-desc">From identity and packaging to social media, websites, and AI-powered visuals — everything your brand needs, under one roof.</p>
+      <nav class="hero-jumps">
+        <a href="#branding">Logo & Branding</a>
+        <a href="#social">Social Media</a>
+        <a href="#website">Website</a>
+        <a href="#menu">Menu Design</a>
+        <a href="#packaging">Packaging</a>
+        <a href="#ai">AI Services</a>
+        <a href="#addons">Add-Ons</a>
+      </nav>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-val">120+</div><div class="hstat-lbl">Projects Delivered</div></div>
+      <div class="hstat"><div class="hstat-val">7</div><div class="hstat-lbl">Service Categories</div></div>
+      <div class="hstat"><div class="hstat-val">98%</div><div class="hstat-lbl">Client Retention</div></div>
+      <div class="hstat"><div class="hstat-val">₹3K</div><div class="hstat-lbl">Starts From</div></div>
+    </div>
+  </div>
+</section>
 
-  <img id="panda" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" />
+<!-- 01 BRANDING -->
+<div class="divider"></div>
+<div class="reveal" id="branding">
+<section class="section">
+  <div class="sh">
+    <p class="slabel">01 — Logo & Branding</p>
+    <h2 class="stitle">Identity That<br><em>Commands Attention</em></h2>
+    <p class="sintro">Your brand's first impression, crafted with intention. Every package includes all digital formats, print-ready files, and the design thinking behind every decision.</p>
+  </div>
+  <div class="cgrid">
+    <div class="card">
+      <p class="ctier">Tier 01 — Entry</p>
+      <h3 class="cname">Starter Logo Package</h3>
+      <p class="cbest">Perfect for startups & solo entrepreneurs</p>
+      <div class="pval">₹3,000</div><p class="punit">One-time</p>
+      <p class="dtitle">Deliverables</p>
+      <ul class="dlist">
+        <li>3 Initial Rough Concepts / Sketches</li>
+        <li>1 Finalized Logo Concept</li>
+        <li>2 Revision Rounds</li>
+        <li>Light & Dark Version Variations</li>
+        <li>Basic Colour Palette Reference</li>
+        <li>All Required Digital Formats (PNG, SVG, PDF, EPS)</li>
+      </ul>
+    </div>
+    <div class="card feat">
+      <span class="pop">Most Popular</span>
+      <p class="ctier">Tier 02 — Professional</p>
+      <h3 class="cname">Professional Brand Kit</h3>
+      <p class="cbest">Growing businesses building a full identity</p>
+      <div class="pval">₹7,000</div><p class="punit">One-time</p>
+      <p class="dtitle">Deliverables</p>
+      <ul class="dlist">
+        <li>Style Scaping & Moodboard</li>
+        <li>3 Logo Concepts · 2 Revision Rounds Each</li>
+        <li>Final Logo System (Primary, Secondary, Icon Mark)</li>
+        <li>Business Card + Letterhead Design</li>
+        <li>Basic Brand Guide — Colours, Typography, Do's & Don'ts</li>
+        <li>Professional Mockup Presentations</li>
+        <li>All Formats (Print + Digital)</li>
+      </ul>
+      <span class="achip">+ Printed Brand Booklet ₹1,500</span>
+    </div>
+    <div class="card">
+      <p class="ctier">Tier 03 — Advanced</p>
+      <h3 class="cname">Advanced Brand Identity</h3>
+      <p class="cbest">Established brands, rebrands & premium launches</p>
+      <div class="pval">₹14,000</div><p class="punit">One-time</p>
+      <p class="dtitle">Deliverables</p>
+      <ul class="dlist">
+        <li>Brand Strategy Session (Vision & Positioning)</li>
+        <li>Deep Style Scaping & Competitive Moodboard</li>
+        <li>5 Logo Concepts · Unlimited Revisions</li>
+        <li>Complete Logo System (Primary / Secondary / Favicon / Monogram)</li>
+        <li>Full Brand Guide — Typography, Colours, Patterns, Usage Rules</li>
+        <li>Stationery Suite — Business Card, Letterhead, Envelope, Email Signature</li>
+        <li>Social Media Kit — Profile, Cover & Highlight Templates</li>
+        <li>Brand Pattern / Texture Design</li>
+        <li>Premium 3D & Lifestyle Mockups (10+)</li>
+        <li>Printed Brand Booklet — Included</li>
+        <li>All Formats — Print, Digital, Web, Embroidery-Ready</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ab">
+    <p class="ab-title">Branding Add-Ons</p>
+    <div class="agrid">
+      <div class="agitem"><div class="agname">Printed Brand Guideline Booklet</div><span class="agprice">₹1,500</span></div>
+      <div class="agitem"><div class="agname">Additional Logo Concept</div><span class="agprice">₹1,000</span></div>
+      <div class="agitem"><div class="agname">Brand Pattern / Surface Design</div><span class="agprice">₹2,500</span></div>
+      <div class="agitem"><div class="agname">Social Media Kit Templates</div><span class="agprice">₹2,000</span></div>
+    </div>
+  </div>
+</section>
+</div>
 
-  <div class="buttons">
-    <button id="yes">Yes 🥰</button>
-    <button id="no">No 🙈</button>
+<!-- 02 SOCIAL MEDIA -->
+<div class="section-alt reveal" id="social">
+<section class="section">
+  <div class="sh">
+    <p class="slabel">02 — Social Media Management</p>
+    <h2 class="stitle">Content That<br><em>Converts & Grows</em></h2>
+    <p class="sintro">Monthly retainer plans built around what actually performs today — heavier on Reels, richer in strategy, and designed to generate real results, not just fill a calendar.</p>
+  </div>
+  <div class="pgrid">
+    <div class="plan">
+      <p class="ptier">Plan 01 — Starter</p>
+      <h3 class="pname">Presence Plan</h3>
+      <p class="ptagline">Build your baseline, show up consistently</p>
+      <div class="pprice">₹10,000</div><p class="pper">per month</p>
+      <div class="pdiv"></div>
+      <ul class="pfeat-feat">
+        <li><span class="fi">→</span>8 Feed Posts (Static + Carousel)</li>
+        <li><span class="fi">→</span>6 Reels (Short-form, Trending Audio)</li>
+        <li><span class="fi">→</span>10 Stories / Week</li>
+        <li><span class="fi">→</span>Monthly Content Calendar</li>
+        <li><span class="fi">→</span>Basic Caption Copywriting</li>
+        <li><span class="fi">→</span>Hashtag Strategy</li>
+      </ul>
+    </div>
+    <div class="plan">
+      <p class="ptier">Plan 02 — Growth</p>
+      <h3 class="pname">Growth Plan</h3>
+      <p class="ptagline">Structured content that builds authority</p>
+      <div class="pprice">₹15,000</div><p class="pper">per month</p>
+      <div class="pdiv"></div>
+      <ul class="pfeat-feat">
+        <li><span class="fi">→</span>12 Feed Posts (Static, Carousel & Infographics)</li>
+        <li><span class="fi">→</span>8 Reels (Scripted + Trending Concepts)</li>
+        <li><span class="fi">→</span>15 Stories / Week (Polls, Q&A, Sliders)</li>
+        <li><span class="fi">→</span>Monthly Content Calendar</li>
+        <li><span class="fi">→</span>Shoot Planning Support</li>
+        <li><span class="fi">→</span>SEO-Optimised Captions</li>
+        <li><span class="fi">→</span>Trend Research & Content Mapping</li>
+        <li><span class="fi">→</span>Monthly Performance Summary</li>
+      </ul>
+    </div>
+    <div class="plan pfeat">
+      <span class="pop">Most Popular</span>
+      <p class="ptier">Plan 03 — Scale</p>
+      <h3 class="pname">Scale & Authority Plan</h3>
+      <p class="ptagline">Consistent scaling with data-backed strategy</p>
+      <div class="pprice">₹19,000</div><p class="pper">per month</p>
+      <div class="pdiv"></div>
+      <ul class="pfeat-feat">
+        <li class="hi"><span class="fi">→</span>14 Feed Posts (Mixed Formats)</li>
+        <li class="hi"><span class="fi">→</span>12 Reels (Hook-Based, Script + Direction)</li>
+        <li><span class="fi">→</span>20 Stories / Week (Branded + Interactive)</li>
+        <li><span class="fi">→</span>Full-Month Content Calendar</li>
+        <li><span class="fi">→</span>Shoot Planning & Direction Support</li>
+        <li><span class="fi">→</span>Advanced Video Editing (Transitions, Effects, Captions)</li>
+        <li><span class="fi">→</span>Competitor Analysis & Trend Mapping</li>
+        <li><span class="fi">→</span>Monthly Analytics Report with Insights</li>
+        <li><span class="fi">→</span>Profile Optimisation</li>
+      </ul>
+    </div>
+    <div class="plan">
+      <p class="ptier">Plan 04 — Domination</p>
+      <h3 class="pname">Brand Domination Plan</h3>
+      <p class="ptagline">Full-scale content machine for aggressive growth</p>
+      <div class="pprice">₹30,000</div><p class="pper">per month</p>
+      <div class="pdiv"></div>
+      <ul class="pfeat-feat">
+        <li class="hi"><span class="fi">→</span>18–20 Feed Posts (Carousel, Infographic, Lifestyle)</li>
+        <li class="hi"><span class="fi">→</span>16+ Reels (Full Production — Concept to Edit)</li>
+        <li><span class="fi">→</span>25+ Stories / Week (Full-Funnel Strategy)</li>
+        <li><span class="fi">→</span>Monthly 1:1 Growth Strategy Session</li>
+        <li><span class="fi">→</span>Full Quarterly Growth Roadmap</li>
+        <li><span class="fi">→</span>Shoot Planning, Direction & Coordination</li>
+        <li><span class="fi">→</span>Premium Editing (Colour Grade, Captions, Motion GFX)</li>
+        <li><span class="fi">→</span>Deep Competitor Analysis & Benchmarking</li>
+        <li><span class="fi">→</span>Real-Time Trend Mapping (Weekly)</li>
+        <li><span class="fi">→</span>In-Depth Monthly Analytics Report</li>
+        <li><span class="fi">→</span>Full Profile + Highlights Optimisation</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ab">
+    <p class="ab-title">Digital Optimisation Add-Ons</p>
+    <div class="arows">
+      <div class="arow"><div><div class="arow-name">Google My Business Optimisation</div><div class="arow-desc">Profile setup, category optimisation, photos & reviews management</div></div><span class="arow-price">₹2,000</span></div>
+      <div class="arow"><div><div class="arow-name">Website Basic SEO</div><div class="arow-desc">Meta tags, alt text, sitemap, speed optimisation recommendations</div></div><span class="arow-price">₹2,000</span></div>
+      <div class="arow"><div><div class="arow-name">Platform Verification Support</div><div class="arow-desc">Assistance with Instagram, Facebook & Google verification process</div></div><span class="arow-price">₹2,000</span></div>
+      <div class="arow"><div><div class="arow-name">Content Authorisation Setup</div><div class="arow-desc">Rights management, branded content tagging & account linking</div></div><span class="arow-price">₹2,000</span></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- 03 WEBSITE -->
+<div class="divider"></div>
+<div class="reveal" id="website">
+<section class="section">
+  <div class="sh">
+    <p class="slabel">03 — Website Design</p>
+    <h2 class="stitle">Websites That<br><em>Work as Hard as You</em></h2>
+    <p class="sintro">Every website we build is mobile-first, performance-optimised, and designed to convert. Whether you need a simple online presence or a full e-commerce store — we have the right solution.</p>
+  </div>
+  <div class="tabs">
+    <button class="tbtn on" onclick="tab(this,'td')">Custom Dynamic</button>
+    <button class="tbtn" onclick="tab(this,'te')">E-Commerce</button>
+    <button class="tbtn" onclick="tab(this,'ts')">Static Website</button>
+  </div>
+  <div class="tpane on" id="td">
+    <table class="dtable">
+      <thead><tr><th>Feature</th><th>Details</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr><td>Custom Dynamic Website</td><td>Fully custom design tailored to your brand. Built with a CMS so you can edit content yourself. Ideal for portfolios, service businesses, restaurants & agencies. Includes database integration, contact forms, SEO-ready structure, and responsive layout.</td><td class="p">₹5,000 / page</td></tr>
+        <tr><td>Recommended Minimum</td><td>Home + About + Services + Contact = 4 pages</td><td class="p">from ₹20,000</td></tr>
+        <tr><td>Includes</td><td>Custom UI Design · Dynamic CMS · Database Integration · Mobile Responsive · On-Page SEO Setup · 2 Revision Rounds</td><td class="p">—</td></tr>
+        <tr><td>Optional Extras</td><td>Hosting Setup, Domain Configuration, Monthly Maintenance Retainer</td><td class="p">On request</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tpane" id="te">
+    <table class="dtable">
+      <thead><tr><th>Feature</th><th>Details</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr><td>E-Commerce Website</td><td>Complete online store with product management, secure payments, and order tracking. Perfect for product brands, boutiques & DTC businesses.</td><td class="p">₹25,000 / Year</td></tr>
+        <tr><td>Products Included</td><td>Up to 25 products with images, descriptions, categories & variants</td><td class="p">Included</td></tr>
+        <tr><td>Payment Gateway</td><td>Razorpay / Stripe / PayU integration with secure checkout flow</td><td class="p">Included</td></tr>
+        <tr><td>Admin Dashboard</td><td>Manage orders, inventory, customers & analytics from a central panel</td><td class="p">Included</td></tr>
+        <tr><td>SEO & Performance</td><td>Basic on-page SEO, image optimisation, page speed setup</td><td class="p">Included</td></tr>
+        <tr><td>Hosting & Maintenance</td><td>1-year managed hosting, SSL certificate, security updates, uptime monitoring</td><td class="p">Included</td></tr>
+        <tr><td>Additional Products</td><td>Beyond the initial 25 products</td><td class="p">₹200 / product</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tpane" id="ts">
+    <table class="dtable">
+      <thead><tr><th>Type</th><th>Best For</th><th>Details</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr><td>Multi-Page Static</td><td>Service pages, portfolios, informational sites</td><td>Custom layout, fully responsive, fast-loading. Includes all standard pages + additional as needed.</td><td class="p">₹3,000 / page</td></tr>
+        <tr><td>Single Page Website</td><td>Events, launches, personal brands, micro-sites</td><td>One continuous scrolling page — animated, interactive, fully responsive. Perfect for product or event showcases.</td><td class="p">₹8,000 flat</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+</div>
+
+<!-- 04 MENU -->
+<div class="section-alt reveal" id="menu">
+<section class="section">
+  <div class="sh">
+    <p class="slabel">04 — Menu Design</p>
+    <h2 class="stitle">Menus That Sell<br><em>Before the Server Does</em></h2>
+    <p class="sintro">A well-designed menu isn't just a list — it's a sales tool. We design menus that guide your guest's eye, elevate perceived value, and are optimised for both print and digital display.</p>
+  </div>
+  <table class="dtable">
+    <thead><tr><th>Package</th><th>Best For</th><th>Deliverables</th><th>Price</th></tr></thead>
+    <tbody>
+      <tr><td>Single Page Menu</td><td>Cafés, food trucks, small eateries</td><td>1 Page — Structured Layout, Branded Typography, High-Res Print File, Digital PDF Version, 1 Revision Round</td><td class="p">₹3,000</td></tr>
+      <tr><td>Multi-Page Menu</td><td>Restaurants, bars, hotels</td><td>Multiple Pages — Consistent Typography System, Section Headers & Dividers, High-Res Print + Digital Files, 2 Revision Rounds</td><td class="p">₹2,000 / page</td></tr>
+      <tr><td>Luxury Menu Design</td><td>Fine-dining, premium hospitality</td><td>Premium Custom Layout, Decorative Elements, Gold / Foil-Ready Artwork, Custom Iconography, Branded Colour Palette, Print + Digital, 3 Revision Rounds, Print Coordination Support</td><td class="p">₹7,000+</td></tr>
+    </tbody>
+  </table>
+  <div class="ab">
+    <p class="ab-title">Menu Add-Ons</p>
+    <div class="agrid">
+      <div class="agitem"><div class="agname">QR Code Menu (Digital Link Setup)</div><span class="agprice">₹800</span></div>
+      <div class="agitem"><div class="agname">Menu Board / Signage Format</div><span class="agprice">₹1,500</span></div>
+      <div class="agitem"><div class="agname">Additional Language Version</div><span class="agprice">₹1,000</span></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- 05 PACKAGING -->
+<div class="divider"></div>
+<div class="reveal" id="packaging">
+<section class="section">
+  <div class="sh">
+    <p class="slabel">05 — Packaging Design</p>
+    <h2 class="stitle">Packaging That Gets<br><em>Picked Off the Shelf</em></h2>
+    <p class="sintro">From basic labels to full premium packaging systems — we design packaging that communicates your product's value before it's even opened. All designs are print-ready and production-optimised.</p>
+  </div>
+  <div class="cgrid">
+    <div class="card">
+      <p class="ctier">Entry Level</p>
+      <h3 class="cname">Basic Packaging Design</h3>
+      <p class="cbest">Single product, labels & simple packaging</p>
+      <div class="pval">₹4,000</div><p class="punit">One-time</p>
+      <p class="dtitle">Deliverables</p>
+      <ul class="dlist">
+        <li>1 Packaging Design (Single SKU)</li>
+        <li>Die-Line / Template Setup</li>
+        <li>Print-Ready File (CMYK, Bleed & Crop Marks)</li>
+        <li>Basic 3D Mockup</li>
+        <li>2 Revision Rounds</li>
+      </ul>
+    </div>
+    <div class="card feat">
+      <span class="pop">Most Popular</span>
+      <p class="ctier">Professional</p>
+      <h3 class="cname">Professional Packaging Design</h3>
+      <p class="cbest">Brands launching or refreshing packaging</p>
+      <div class="pval">₹7,000</div><p class="punit">One-time</p>
+      <p class="dtitle">Deliverables</p>
+      <ul class="dlist">
+        <li>2 Design Directions / Concepts</li>
+        <li>Full Die-Line Setup & Technical Specs</li>
+        <li>High-Quality 3D Mockup Renders</li>
+        <li>Print-Ready Files (All Formats)</li>
+        <li>Brand-Aligned Typography & Colour System</li>
+        <li>3 Revision Rounds</li>
+      </ul>
+    </div>
+    <div class="card">
+      <p class="ctier">Premium System</p>
+      <h3 class="cname">Premium Packaging System</h3>
+      <p class="cbest">Multi-SKU product lines & gift packaging</p>
+      <div class="pval">₹12,000+</div><p class="punit">One-time · up to 3 variants</p>
+      <p class="dtitle">Deliverables</p>
+      <ul class="dlist">
+        <li>Multi-SKU Adaptation — Up to 3 Variants</li>
+        <li>Unified Design Language Across Product Line</li>
+        <li>Advanced 3D Mockup Renders (Lifestyle + Studio)</li>
+        <li>Full Die-Line + Technical Print Spec Sheet</li>
+        <li>Print Coordination Support (Vendor Briefs)</li>
+        <li>All Print-Ready Files + Source Files</li>
+        <li>Unlimited Revision Rounds</li>
+      </ul>
+      <span class="achip">Additional Variants: ₹1,500 each</span>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- 06 AI SERVICES -->
+<div class="section-alt reveal" id="ai">
+<section class="section">
+  <div class="sh">
+    <p class="slabel">06 — AI-Powered Visual Services</p>
+    <h2 class="stitle">Studio-Quality Visuals<br><em>at Campaign Speed</em></h2>
+  </div>
+  <div class="ai-banner">
+    <div class="ai-bnum">AI</div>
+    <p>AI-generated imagery and videography that rivals traditional production — at a fraction of the cost and time. We combine <strong>advanced AI tools with creative direction</strong> to deliver polished, on-brand assets that perform. Whether you need product photography, brand visuals, short-form videos, or a complete commercial campaign.</p>
+  </div>
+  <div class="aigrid">
+    <div class="aicard">
+      <div class="aiicon">📸</div>
+      <p class="aicat">Category 01 — Photography</p>
+      <h3 class="ainame">AI Image & Photography</h3>
+      <p class="aitag">Product shots, brand imagery, lifestyle visuals — no studio needed</p>
+      <div class="aipacks">
+        <div class="aipack"><div><div class="aipname">Starter Image Pack</div><div class="aipdetail">10 AI-generated images · 2 concept directions · High-res export</div></div><div class="aipprice">₹4,000<div class="aipsub">one-time</div></div></div>
+        <div class="aipack"><div><div class="aipname">Product Photography Pack</div><div class="aipdetail">20 product images · White BG + Lifestyle · 3 concept directions · Retouching included</div></div><div class="aipprice">₹7,500<div class="aipsub">one-time</div></div></div>
+        <div class="aipack"><div><div class="aipname">Brand Visual Campaign</div><div class="aipdetail">40+ images · Full creative direction · Multi-use formats · Unlimited revisions</div></div><div class="aipprice">₹14,000<div class="aipsub">one-time</div></div></div>
+      </div>
+      <p class="dtitle">All Image Packs Include</p>
+      <ul class="dlist">
+        <li>High-Resolution Files (Print & Web)</li>
+        <li>Multiple Aspect Ratios (Square, Portrait, Story)</li>
+        <li>Brand Colour & Style Alignment</li>
+        <li>Commercial Usage Rights</li>
+      </ul>
+    </div>
+    <div class="aicard">
+      <div class="aiicon">🎬</div>
+      <p class="aicat">Category 02 — Videography</p>
+      <h3 class="ainame">AI Videography</h3>
+      <p class="aitag">Reels, ads, brand films — scroll-stopping video powered by AI</p>
+      <div class="aipacks">
+        <div class="aipack"><div><div class="aipname">Reel Starter Pack</div><div class="aipdetail">5 short-form videos (15–30 sec) · Trending formats · Captions & audio sync</div></div><div class="aipprice">₹5,000<div class="aipsub">one-time</div></div></div>
+        <div class="aipack"><div><div class="aipname">Brand Video Pack</div><div class="aipdetail">10 videos (Reels + 60-sec brand content) · 2 concept styles · Motion graphics</div></div><div class="aipprice">₹10,000<div class="aipsub">one-time</div></div></div>
+        <div class="aipack"><div><div class="aipname">Commercial Film Pack</div><div class="aipdetail">1 hero brand film (60–90 sec) + 5 cut-downs · VO option · Full post-production</div></div><div class="aipprice">₹18,000<div class="aipsub">one-time</div></div></div>
+      </div>
+      <p class="dtitle">All Video Packs Include</p>
+      <ul class="dlist">
+        <li>MP4 Export (1080p / 4K on request)</li>
+        <li>Multiple Aspect Ratios (Reel, Feed, YouTube)</li>
+        <li>Subtitles / Captions Option</li>
+        <li>Commercial Usage Rights</li>
+      </ul>
+    </div>
+    <div class="aicard aifull">
+      <div style="display:flex;gap:3rem;flex-wrap:wrap;align-items:flex-start;">
+        <div style="min-width:250px;flex:1;">
+          <div class="aiicon">🚀</div>
+          <p class="aicat">Category 03 — Full Campaign</p>
+          <h3 class="ainame">Full Commercial Campaign</h3>
+          <p class="aitag">Photos + Videos + Creative Direction — a complete launch-ready content suite</p>
+          <p style="font-size:0.79rem;color:var(--muted);line-height:1.7;margin-top:0.4rem;">The ultimate AI-powered content package. Creative direction, visual development, and all production — delivering a campaign that looks like a premium traditional shoot.</p>
+        </div>
+        <div style="flex:2;min-width:270px;">
+          <div class="aipacks">
+            <div class="aipack"><div><div class="aipname">Campaign Starter</div><div class="aipdetail">15 images + 5 Reels · 1 concept direction · Social-ready formats</div></div><div class="aipprice">₹12,000<div class="aipsub">one-time</div></div></div>
+            <div class="aipack"><div><div class="aipname">Campaign Pro</div><div class="aipdetail">30 images + 10 videos · 2 creative directions · Moodboard + Art Direction · Multi-platform formats</div></div><div class="aipprice">₹22,000<div class="aipsub">one-time</div></div></div>
+            <div class="aipack"><div><div class="aipname">Full Launch Campaign</div><div class="aipdetail">50+ images + 15+ videos · Full creative strategy · 3 concept worlds · Hero film + cut-downs · Print + Digital + Social assets · Unlimited revisions</div></div><div class="aipprice">₹40,000<div class="aipsub">one-time</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- 07 ADD-ONS -->
+<div class="divider"></div>
+<div class="reveal" id="addons">
+<section class="section">
+  <div class="sh">
+    <p class="slabel">07 — Optional Strategic Add-Ons</p>
+    <h2 class="stitle">Enhance Any<br><em>Package You Choose</em></h2>
+    <p class="sintro">Bolt these on to any project to go deeper on strategy, production, or refinement. Mix and match based on what your brand needs right now.</p>
+  </div>
+  <div class="sgrid">
+    <div class="sitem"><div><div class="sname">Brand Strategy Session</div><div class="sdesc">1:1 deep-dive into your brand positioning, target audience, competitive landscape, and visual direction. Ideal before starting any branding or content project.</div></div><div class="sprice">₹3,000</div></div>
+    <div class="sitem"><div><div class="sname">Professional Mockups</div><div class="sdesc">Lifestyle and studio-quality mockup renders of your design applied to real-world surfaces — packaging, signage, apparel, devices, and stationery.</div></div><div class="sprice">₹1,500</div></div>
+    <div class="sitem"><div><div class="sname">Extra Revisions</div><div class="sdesc">Additional revision round beyond your package's included rounds. Applies to logos, social content, packaging, menus, and websites.</div></div><div class="sprice">₹1,000 / round</div></div>
+    <div class="sitem"><div><div class="sname">Shoot Direction Consultation</div><div class="sdesc">Expert visual direction for your real-world photo or video shoots — moodboard, shot list, styling brief, on-call direction support, and post-shoot review.</div></div><div class="sprice">₹5,000</div></div>
+    <div class="sitem"><div><div class="sname">Social Media Audit</div><div class="sdesc">Full review of your existing social presence — profile strength, content quality, posting frequency, engagement patterns, and a clear improvement roadmap.</div></div><div class="sprice">₹2,500</div></div>
+    <div class="sitem"><div><div class="sname">Content Repurposing Pack</div><div class="sdesc">Take existing content (videos, photos, blogs) and repurpose into 10 fresh social media assets — reformatted, re-edited, and re-captioned for current trends.</div></div><div class="sprice">₹3,500</div></div>
+    <div class="sitem"><div><div class="sname">Custom Illustration / Icon Set</div><div class="sdesc">Bespoke illustrations or icon set designed to match your brand identity. Perfect for menus, websites, packaging, and marketing collateral.</div></div><div class="sprice">from ₹4,000</div></div>
+    <div class="sitem"><div><div class="sname">Rush Delivery</div><div class="sdesc">Priority queue placement with accelerated turnaround. Available for logo, packaging, menu, and social content projects.</div></div><div class="sprice">+30% of project</div></div>
+  </div>
+</section>
+</div>
+
+<!-- CTA -->
+<div class="cta reveal" id="cta">
+  <div style="max-width:var(--max);margin:0 auto;">
+    <p class="slabel" style="justify-content:center;color:rgba(245,242,237,0.35);">Ready to Begin?</p>
+    <h2 class="stitle" style="text-align:center;margin:0.5rem auto 0.9rem;">Let's Build Your<br><em>Growth Ecosystem</em></h2>
+    <p>Partner with us to create digital systems that compound in value. Strategy, design, and technology — unified.</p>
+    <a href="mailto:hello@studio.com" class="cbtn">Start Your Project →</a>
   </div>
 </div>
 
+<!-- FOOTER -->
+<footer style="border-top:1px solid var(--border);padding:2rem var(--pad);">
+  <div style="max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+    <div style="font-family:var(--f-serif);font-size:1.1rem;font-weight:700;color:var(--ink);">Pricing & <em style="font-style:italic;opacity:0.4">Services</em></div>
+    <div style="font-family:var(--f-mono);font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">All prices in ₹ · GST applicable · Subject to change</div>
+  </div>
+</footer>
+
 <script>
-  const noBtn = document.getElementById('no');
-  const yesBtn = document.getElementById('yes');
-  const panda = document.getElementById('panda');
-  const music = document.getElementById('music');
-
-  document.body.addEventListener('click', () => {
-    music.play();
-  }, { once: true });
-
-  noBtn.addEventListener('mouseover', () => {
-    const x = Math.random() * 220 - 110;
-    const y = Math.random() * 100 - 50;
-    noBtn.style.transform = `translate(${x}px, ${y}px)`;
-    panda.src = "https://media.giphy.com/media/l41lYCDgxP6OFBruE/giphy.gif";
-  });
-
-  yesBtn.addEventListener('click', () => {
-    document.querySelector('.card').innerHTML = `
-      <h1>She said YES 💍💖</h1>
-      <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" />
-      <p style="font-size:18px;color:#ff4d88;margin-top:10px;">
-        Kaur Ji, will you walk this beautiful life with me,
-        laugh with me, grow with me, and be mine forever? 💕
-      </p>
-      <p style="font-size:15px;color:#ff85ad;">
-        This is my heart, always yours ❤️
-      </p>
-      <p style="font-size:14px;color:#ff69b4;">
-        — Jaskeerat 💖
-      </p>
-    `;
-  });
-
-  function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = Math.random() * 10 + 14 + "px";
-    heart.style.animationDuration = Math.random() * 3 + 3 + "s";
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-      heart.remove();
-    }, 6000);
-  }
-
-  setInterval(createHeart, 300);
+function tab(el,id){
+  document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.tpane').forEach(p=>p.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById(id).classList.add('on');
+}
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:0.06});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
-
 </body>
 </html>
